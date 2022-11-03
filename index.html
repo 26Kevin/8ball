@@ -2,14 +2,20 @@
 <head>
 <title>Magic 8 ball</title>
 <link rel="stylesheet" href="style.css">
+<script defer src="main.js"></script>
 </head>
 
 <body>
     <h1>Magic 8 ball</h1>
+    <hr />
+    <p>Type in a yes/no question and then click the Magic 8 ball to get your answer.</p>
+
     <h2>Question:</h2>
     <input id ="char-in" type="text" />
     <p> 
-        <img id ="8ball-img" class="character-img active" src = "img/8ball.png" alt="8ball">
+        <img id ="ball-img" class="character-img active" src = "img/8ball.png" alt="8ball">
     </p>
+
+    <h2 id ="output">Answer: <span id="output">Please ask a question.. </span></h2>
 </body>
 </html>
