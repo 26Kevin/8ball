@@ -1,7 +1,7 @@
 let charOutputEl = document.getElementById("output");
+let ballEl = document.getElementById("ball-img");
 
-document.getElementById("ball-img").addEventListener("click", ballClicked);
-
+ballEl.addEventListener("click", ballClicked);
 function ballClicked() {
   //Input
   let name = document.getElementById("char-in").value.toLowerCase();
