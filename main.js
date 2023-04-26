@@ -5,25 +5,25 @@ let ballEl = document.getElementById("ball-img");
 ballEl.addEventListener("click", ballClicked);
 
 function ballClicked() {
-  let response = document.getElementById("char-in").value.toLowerCase();
+  let question = document.getElementById("char-in").value.toLowerCase();
 
   document.getElementById("output").innerHTML =
-    checkQuestion(response) || randomResponse(response);
+    checkQuestion(question) || randomResponse(question);
 }
 
-function checkQuestion(response) {
-  if (response === "") {
+function checkQuestion(question) {
+  if (question === "") {
     return "Please ask a question";
-  } else if (response === "does a magic 8 ball actually work?") {
+  } else if (question === "does a magic 8 ball actually work?") {
     return "How dare you doubt me!";
-  } else if (response === "is javascript awesome?") {
+  } else if (question === "is javascript awesome?") {
     return "Of Course!";
   } else {
     return "";
   }
 }
 
-function randomResponse(response) {
+function randomResponse(question) {
   let randNum = Math.random();
   if (randNum < 0.2) {
     return "Without a Doubt.";
