@@ -1,20 +1,39 @@
+// Input
 let charOutputEl = document.getElementById("output");
 let ballEl = document.getElementById("ball-img");
 
 ballEl.addEventListener("click", ballClicked);
+
 function ballClicked() {
-  //Input
-  let name = document.getElementById("char-in").value.toLowerCase();
+  let response = document.getElementById("char-in").value.toLowerCase();
+
+  document.getElementById("output").innerHTML =
+    checkQuestion(response) || randomResponse(response);
+}
+
+function checkQuestion(response) {
+  if (response === "") {
+    return "Please ask a question";
+  } else if (response === "does a magic 8 ball actually work?") {
+    return "How dare you doubt me!";
+  } else if (response === "is javascript awesome?") {
+    return "Of Course!";
+  } else {
+    return "";
+  }
+}
+
+function randomResponse(response) {
   let randNum = Math.random();
   if (randNum < 0.2) {
-    charOutputEl.innerHTML = "Without a Doubt";
+    return "Without a Doubt.";
   } else if (randNum < 0.4) {
-    charOutputEl.innerHTML = "As I see it,yes";
+    return "As I see it,yes";
   } else if (randNum < 0.6) {
-    charOutputEl.innerHTML = "Concentrate and ask again";
+    return "Concentrate and ask again";
   } else if (randNum < 0.8) {
-    charOutputEl.innerHTML = "Don't count on it";
+    return "Don't count on it";
   } else {
-    charOutputEl.innerHTML = "Outlook not so good";
+    return "Outlook not so good";
   }
 }
